@@ -1,72 +1,41 @@
-program lista_1
+program numeros_primos
 ! --------------------------------
 ! autor    : Hugo
 ! data     : 20/08/2020
-! --------------------------------
-! codigo   : lista1.f95
-! proposito: declarar uma lista
-!            de inteiros.
-! --------------------------------
+
    implicit none
    integer, dimension(5) :: lista
-   integer :: i
+   integer :: contador
    real :: numero
    integer :: divisor
-   integer :: resto
+   integer :: cand
    
    !-----------------------------
    ! entrada de dados
    !-----------------------------
-   
-   print *, "Entre com os valores"
-   
-   i = 0
-   
+ 
+   cand = 2
    numero = 5
    
-   do divisor = 2, numero - 1
-      
+   do contador = cand, numero
 
-   resto = (numero - divisor*(numero/divisor))
-   
-  
-      
-    if(resto == 0) THEN
-        
-        print*, numero, "não é primo"
-      
-    exit 
-    
-    end if
-	read*, lista(i)
-    end do
+            do divisor = cand, contador/divisor  
+            
+            if(mod(contador,divisor) == 0) THEN
+              print*, contador , "Não é primo"
+			   exit
+			   end if
+		     end do
+		       
+			
+             if (divisor > (contador/divisor)) then
+              print*,  contador ,"É primo"
+              
+             end if
+             
+            
+          			
 	
     
-    
-    if(resto /= 0) then 
-       
-        print*, numero, "é primo"
-    end if
-     
-   numero = numero + 1 
-	 
-   read *, lista(i)
-   print *
-   
-   
-   
-   !-----------------------------
-   ! saida de dados 1 por 1
-   !-----------------------------
-   
-   do i=0,5
-      print*, lista(i)
-   end do
-   print *
-   
-   !-----------------------------
-   ! imprimindo a lista completa
-   !-----------------------------
-   
-   print '(5I5)', lista
+    end do 
 end program
