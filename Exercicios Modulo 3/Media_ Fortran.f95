@@ -1,4 +1,4 @@
-0program casos1
+program Media_Fortran
    ! --------------------------------
    ! codigo   : Mod04Ex04.f95
    ! proposito: Media 
